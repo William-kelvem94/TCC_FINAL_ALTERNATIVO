@@ -4,6 +4,7 @@ numpy
 gTTS
 pygame
 mtranslate
-tensorflow  # Keras está incluído no TensorFlow a partir das versões mais recentes
+tensorflow
 SpeechRecognition
 pyttsx3
+pyaudio

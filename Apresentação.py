@@ -18,6 +18,11 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tessera
 os.environ['TESSDATA_PREFIX'] = r'C:\Program Files\Tesseract-OCR\tessdata'
 tessdata_dir_config = '--tessdata-dir "C:\\Program Files\\Tesseract-OCR\\tessdata"'
 
+# Inicializar o mixer e pyttsx3
+mixer.init()
+engine = pyttsx3.init()
+engine.setProperty('rate', 150)
+
 # Dicionário de idiomas suportados pelo gTTS
 idiomas = {
     'Afrikaans': 'af', 'Árabe': 'ar', 'Bengali': 'bn', 'Cantonês': 'yue', 'Catalão': 'ca',
@@ -31,11 +36,6 @@ idiomas = {
     'Sueco': 'sv', 'Tâmil': 'ta', 'Telugu': 'te', 'Tailandês': 'th', 'Turco': 'tr', 'Ucraniano': 'uk',
     'Vietnamita': 'vi', 'Galês': 'cy'
 }
-
-# Inicializar o mixer e pyttsx3
-mixer.init()
-engine = pyttsx3.init()
-engine.setProperty('rate', 150)
 
 # Lock para controle de execução
 fala_lock = threading.Lock()
@@ -129,6 +129,10 @@ def signal_handler(sig, frame):
 # Configurar o tratamento de sinal para interrupção
 signal.signal(signal.SIGINT, signal_handler)
 
+# Apresentar o sistema
+falar("Bem-vindo ao SICOMUV: Sistema de Comunicação Multifuncional com Reconhecimento de Texto e Assistência por Voz para Inclusão Digital.")
+falar("Você pode escolher entre as opções: Capturar imagem, Traduzir texto ou Sair.")
+
 # Selecionar idioma via comando de voz
 idioma_selecionado = selecionar_idioma_por_voz()
 
@@ -145,12 +149,11 @@ if not cap.isOpened():
 
 result = {'comando': None, 'fim': False}
 
+# Iniciar thread para obter comandos de voz
 thread = threading.Thread(target=obter_comandos_de_voz, args=(result,))
 thread.start()
 
-falar("Bem-vindo ao SICOMUV: Sistema de Comunicação Multifuncional com Reconhecimento de Texto e Assistência por Voz para Inclusão Digital.")
-falar("Você pode escolher entre as opções: Capturar imagem, Traduzir texto ou Sair.")
-
+# Loop principal para captura e processamento de frames
 while True:
     selected_frame = select_frame_por_voz(cap, result)
     if result['fim']:
@@ -184,6 +187,7 @@ while True:
 
             cv2.imshow('frame', selected_frame)
 
+# Liberar recursos e encerrar o programa
 cap.release()
 cv2.destroyAllWindows()
 result['fim'] = True
