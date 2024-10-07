@@ -1,11 +1,3 @@
-Claro! Vou guiá-lo através do processo de adicionar informações ao arquivo README e, em seguida, como subir as alterações para o GitHub.
-Passo 1: Criar ou Editar o README.md
-
-Abra o arquivo README.md no seu editor de texto preferido. Se ainda não existir, você pode criar um novo arquivo chamado README.md na raiz do seu projeto.
-
-Cole as informações estruturadas que forneci anteriormente no arquivo. Aqui está o conteúdo que você pode copiar:
-# SICOMUV: Sistema de Comunicação Multifuncional com Reconhecimento de Texto e Assistência por Voz para Inclusão Digital
-
 ## Descrição
 
 O SICOMUV é um sistema projetado para facilitar a comunicação e inclusão digital, utilizando reconhecimento de texto e assistência por voz. Ele captura imagens, processa texto e oferece tradução e síntese de fala em múltiplos idiomas.
@@ -76,32 +68,3 @@ Sinta-se à vontade para contribuir com o projeto. Faça um fork do repositório
 Licença
 Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
-
-
-Salve o arquivo após inserir o conteúdo.
-
-
-Passo 2: Subir as Alterações para o GitHub
-
-Abra o terminal ou prompt de comando no diretório raiz do seu projeto.
-
-Certifique-se de que o repositório local está atualizado:
-git pull origin main
-
-Substitua main pelo nome da sua branch principal, se necessário.
-
-Adicione o arquivo README.md ao controle de versão:
-git add README.md
-
-
-Faça o commit das alterações:
-git commit -m "Adiciona informações detalhadas ao README"
-
-
-Envie as alterações para o GitHub:
-git push origin main
-
-Novamente, substitua main pelo nome da sua branch principal, se necessário.
-
-
-Após esses passos, as informações no README.md estarão disponíveis no seu repositório no GitHub. Se você encontrar algum problema durante o processo, sinta-se à vontade para perguntar!
