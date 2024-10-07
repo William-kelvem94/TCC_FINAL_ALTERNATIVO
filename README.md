@@ -1,4 +1,3 @@
-Aqui está o conteúdo atualizado do README.md com a adição de um tópico explicando como o sistema funciona:
 # SICOMUV
 
 ## Descrição
