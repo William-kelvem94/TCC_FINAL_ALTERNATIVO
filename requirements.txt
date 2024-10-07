@@ -1,0 +1,9 @@
+opencv-python
+pytesseract
+numpy
+gTTS
+pygame
+mtranslate
+tensorflow  # Keras está incluído no TensorFlow a partir das versões mais recentes
+SpeechRecognition
+pyttsx3
