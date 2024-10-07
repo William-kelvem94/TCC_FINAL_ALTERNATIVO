@@ -27,8 +27,8 @@ O SICOMUV é um sistema projetado para facilitar a comunicação e inclusão dig
 
 Crie e ative um ambiente virtual:
 python -m venv myenv
-myenv\Scripts\activate  # No Windows
-# source myenv/bin/activate  # No MacOS/Linux
+myenv\Scripts\activate # No Windows
+source myenv/bin/activate # No MacOS/Linux
 
 
 Instale as dependências:
